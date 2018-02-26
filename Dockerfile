@@ -1,6 +1,7 @@
 FROM continuumio/anaconda
 
-RUN yum -y install java-1.8.0-openjdk; yum clean all
+RUN apt-get -y update
+RUN apt-get -y install default-jre
 RUN curl -s http://d3kbcqa49mib13.cloudfront.net/spark-2.2.0-bin-hadoop2.7.tgz | tar xz -C /opt
 RUN ln -s /opt/spark-2.2.0-bin-hadoop2.7 /opt/spark
 WORKDIR /opt/spark
