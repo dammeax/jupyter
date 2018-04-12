@@ -4,6 +4,7 @@ RUN apt-get -y update
 RUN apt-get -y install default-jre
 RUN apt-get -y install python-pip
 RUN pip install bcolz pixiedust
+RUN conda update -n base conda
 RUN conda install -y -q -c conda-forge jupyter_contrib_nbextensions
 RUN conda install -y -q -c conda-forge jupyter_nbextensions_configurator
 RUN yes|jupyter pixiedust install
