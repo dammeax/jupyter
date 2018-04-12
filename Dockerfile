@@ -6,6 +6,7 @@ RUN apt-get -y install python-pip
 RUN pip install bcolz pixiedust
 RUN conda install -y -q -c conda-forge jupyter_contrib_nbextensions
 RUN conda install -y -q -c conda-forge jupyter_nbextensions_configurator
+RUN yes|jupyter pixiedust install
 RUN curl -s http://d3kbcqa49mib13.cloudfront.net/spark-2.2.0-bin-hadoop2.7.tgz | tar xz -C /opt
 RUN ln -s /opt/spark-2.2.0-bin-hadoop2.7 /opt/spark
 WORKDIR /opt/spark
