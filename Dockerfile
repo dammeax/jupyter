@@ -4,10 +4,10 @@ RUN apt-get -y update
 RUN apt-get -y install default-jre
 RUN apt-get -y install python-pip
 RUN pip install bcolz pixiedust
-ADD inputPixiedustJupyterInstall.txt /tmp/
-RUN jupyter pixiedust install < /tmp/inputPixiedustJupyterInstall.txt
 RUN curl -s http://d3kbcqa49mib13.cloudfront.net/spark-2.2.0-bin-hadoop2.7.tgz | tar xz -C /opt
 RUN ln -s /opt/spark-2.2.0-bin-hadoop2.7 /opt/spark
+ADD inputPixiedustJupyterInstall.txt /tmp/
+RUN jupyter pixiedust install < /tmp/inputPixiedustJupyterInstall.txt
 WORKDIR /opt/spark
 RUN cp /opt/spark/conf/spark-defaults.conf.template /opt/spark/conf/spark-defaults.conf
 RUN echo 'spark.driver.extraJavaOptions=-Dhttp.proxyHost=http://proxy.lbs.alcatel-lucent.com -Dhttp.proxyPort=8000 -Dhttps.proxyHost=http://proxy.lbs.alcatel-lucent.com -Dhttps.proxyPort=8000' >> /opt/spark/conf/spark-defaults.conf
