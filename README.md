@@ -32,8 +32,7 @@ The installation script of pixiedust will create a kernel.json file with the fol
   "SPARK_HOME": "/opt/spark",
   "PYTHONPATH": "/opt/spark/python/:/opt/spark/python/lib/py4j-0.10.4-src.zip",
   "PYTHONSTARTUP": "/opt/spark/python/pyspark/shell.py",
-  "PYSPARK_SUBMIT_ARGS": "--jars /root/pixiedust/bin/cloudant-spark-v2.0.0-185.j
-ar --driver-class-path /root/pixiedust/data/libs/* --master local[10] pyspark-shell",
+  "PYSPARK_SUBMIT_ARGS": "--jars /root/pixiedust/bin/cloudant-spark-v2.0.0-185.jar --driver-class-path /root/pixiedust/data/libs/* --master local[10] pyspark-shell",
   "SPARK_DRIVER_MEMORY": "10G",
   "SPARK_LOCAL_IP": "127.0.0.1"
  }
