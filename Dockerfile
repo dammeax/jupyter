@@ -21,8 +21,3 @@ RUN echo 'spark.ui.reverseProxy true' >> /opt/spark/conf/spark-defaults.conf
 
 # Jupyter config
 COPY jupyter_notebook_config.json /root/.jupyter/
-
-# Spark config
-ENV SPARK_HOME /opt/spark
-ENV PYTHONPATH $SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.10.4-src.zip
-ENV SPARK_OPTS --driver-java-options=-Xms1024M --driver-java-options=-Xmx4096M --driver-java-options=-Dlog4j.logLevel=info
