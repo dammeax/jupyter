@@ -11,6 +11,7 @@ RUN jupyter pixiedust install < /tmp/inputPixiedustJupyterInstall.txt
 RUN sed -i '/PYSPARK_SUBMIT_ARGS/d'  /root/.local/share/jupyter/kernels/pythonwithpixiedustspark22/kernel.json
 RUN sed -i '/SPARK_DRIVER_MEMORY/d' /root/.local/share/jupyter/kernels/pythonwithpixiedustspark22/kernel.json
 RUN sed -i '/SPARK_LOCAL_IP/d' /root/.local/share/jupyter/kernels/pythonwithpixiedustspark22/kernel.json
+RUN echo $(awk 'NR==n-3{sub(/.$/,"")}1' n=$(wc -l /root/.local/share/jupyter/kernels/pythonwithpixiedustspark22/kernel.json)) > /root/.local/share/jupyter/kernels/pythonwithpixiedustspark22/kernel.json
 RUN jupyter contrib nbextension install
 RUN jupyter nbextensions_configurator enable
 WORKDIR /opt/spark
