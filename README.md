@@ -1,7 +1,7 @@
 Project to create a docker image for Jupyter Notebook editor tailored for xp team.
 
-Image is based on docker hub anaconda image.
-Anaconda comes with th following packages installed:
+Image is based on docker hub anaconda image with python 2.7.
+Anaconda comes with the following packages installed:
 
 https://docs.anaconda.com/anaconda/packages/py3.6_linux-64
 
