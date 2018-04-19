@@ -3,7 +3,7 @@ FROM continuumio/anaconda
 RUN apt-get -y update
 RUN apt-get -y install default-jre
 RUN apt-get -y install python-pip
-RUN pip install pixiedust jupyter_contrib_nbextensions jupyter_nbextensions_configurator
+RUN pip install pixiedust jupyter_contrib_nbextensions jupyter_nbextensions_configurator tensorflow
 RUN curl -s http://d3kbcqa49mib13.cloudfront.net/spark-2.2.0-bin-hadoop2.7.tgz | tar xz -C /opt
 RUN ln -s /opt/spark-2.2.0-bin-hadoop2.7 /opt/spark
 ADD inputPixiedustJupyterInstall.txt /tmp/
